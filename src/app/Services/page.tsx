@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { 
   Calculator, 
   FileText, 
@@ -132,7 +132,7 @@ const Services: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="lg" asChild>
-              <Link to="/contact">
+              <Link href="/contact">
                 Free Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
@@ -193,13 +193,13 @@ const Services: React.FC = () => {
                 
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button variant="professional" className="flex-1" asChild>
-                    <Link to={`/services/${service.id}`}>
+                    <Link href={`/services/${service.id}`}>
                       Learn More
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Link>
                   </Button>
                   <Button variant="outline" className="flex-1" asChild>
-                    <Link to="/contact">
+                    <Link href="/contact">
                       Get Quote
                     </Link>
                   </Button>
@@ -309,7 +309,7 @@ const Services: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="cta" size="xl" asChild>
-              <Link to="/contact">
+              <Link href="/contact">
                 Book Free Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>

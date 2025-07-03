@@ -2,10 +2,12 @@
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useRef } from "react";
+import Homepage from "./homepage/page";
+
 // import { TooltipProvider } from "@/components/ui/tooltip";
 // import { Toaster } from "@/components/ui/toaster";
 
-export default function Providers({ children }: { children: React.ReactNode }) {
+export default function Home() {
   const queryClientRef = useRef<QueryClient>();
   if (!queryClientRef.current) {
     queryClientRef.current = new QueryClient();
@@ -15,7 +17,8 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     <QueryClientProvider client={queryClientRef.current}>
       {/* <TooltipProvider> */}
         {/* <Toaster /> */}
-        {children}
+        <Homepage />
+        
       {/* </TooltipProvider> */}
     </QueryClientProvider>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Phone, Mail, MapPin, Clock, Linkedin, Instagram, Facebook } from 'lucide-react';
 
 const Footer: React.FC = () => {
@@ -95,7 +95,7 @@ const Footer: React.FC = () => {
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
-                    to={link.href}
+                    href={link.href}
                     className="text-background/80 hover:text-background transition-colors duration-200"
                   >
                     {link.name}
@@ -112,7 +112,7 @@ const Footer: React.FC = () => {
               {services.map((service) => (
                 <li key={service.name}>
                   <Link
-                    to={service.href}
+                    href={service.href}
                     className="text-background/80 hover:text-background transition-colors duration-200"
                   >
                     {service.name}
@@ -179,7 +179,7 @@ const Footer: React.FC = () => {
               {legalLinks.map((link) => (
                 <Link
                   key={link.name}
-                  to={link.href}
+                  href={link.href}
                   className="text-background/70 hover:text-background transition-colors text-sm"
                 >
                   {link.name}

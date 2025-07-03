@@ -1,5 +1,6 @@
+"use client";
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Calendar, User, ArrowRight, Search, Tag, Clock } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -171,7 +172,7 @@ const Blog: React.FC = () => {
                           <Badge className="bg-ca-gold text-foreground">Featured</Badge>
                         </div>
                         <CardTitle className="text-xl hover:text-primary transition-colors">
-                          <Link to={`/blog/${post.id}`}>{post.title}</Link>
+                          <Link href={`/blog/${post.id}`}>{post.title}</Link>
                         </CardTitle>
                       </CardHeader>
                       <CardContent>
@@ -195,7 +196,7 @@ const Blog: React.FC = () => {
                           </div>
                         </div>
                         <Button variant="professional" asChild>
-                          <Link to={`/blog/${post.id}`}>
+                          <Link href={`/blog/${post.id}`}>
                             Read More
                             <ArrowRight className="ml-2 w-4 h-4" />
                           </Link>
@@ -225,7 +226,7 @@ const Blog: React.FC = () => {
                             )}
                           </div>
                           <h3 className="text-xl font-semibold text-primary mb-3 hover:text-primary-dark transition-colors">
-                            <Link to={`/blog/${post.id}`}>{post.title}</Link>
+                            <Link href={`/blog/${post.id}`}>{post.title}</Link>
                           </h3>
                           <p className="text-muted-foreground mb-4 leading-relaxed">
                             {post.excerpt}
@@ -255,7 +256,7 @@ const Blog: React.FC = () => {
                             </div>
                           </div>
                           <Button variant="outline" size="sm" asChild>
-                            <Link to={`/blog/${post.id}`}>
+                            <Link href={`/blog/${post.id}`}>
                               Read Article
                             </Link>
                           </Button>
@@ -281,7 +282,7 @@ const Blog: React.FC = () => {
                     {recentPosts.map((post) => (
                       <div key={post.id} className="border-b border-border pb-4 last:border-b-0 last:pb-0">
                         <h4 className="font-medium text-foreground mb-2 hover:text-primary transition-colors">
-                          <Link to={`/blog/${post.id}`} className="line-clamp-2">
+                          <Link href={`/blog/${post.id}`} className="line-clamp-2">
                             {post.title}
                           </Link>
                         </h4>
@@ -354,13 +355,13 @@ const Blog: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="cta" size="xl" asChild>
-              <Link to="/contact">
+              <Link href="/contact">
                 Schedule Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
             <Button variant="outline" size="xl" asChild>
-              <Link to="/services">
+              <Link href="/services">
                 View Our Services
               </Link>
             </Button>

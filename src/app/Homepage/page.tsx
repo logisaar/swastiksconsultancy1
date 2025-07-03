@@ -155,6 +155,8 @@ const Homepage: React.FC = () => {
                 <Image
                   src="/abinash-portrait.jpg"
                   alt="CA Abinash Mishra"
+                  width={400}
+                  height={400}
                   className="w-full max-w-md mx-auto rounded-2xl shadow-ca-xl"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-background text-foreground p-4 rounded-xl shadow-professional">

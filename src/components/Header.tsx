@@ -1,11 +1,12 @@
+"use client";
+
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
 
   const navigationItems = [
     { name: 'Home', href: '/' },
@@ -17,19 +18,12 @@ const Header: React.FC = () => {
     { name: 'Contact', href: '/contact' }
   ];
 
-  const isActiveRoute = (href: string) => {
-    if (href === '/') {
-      return location.pathname === '/';
-    }
-    return location.pathname.startsWith(href);
-  };
-
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-ca-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center space-x-3">
             <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center shadow-ca-md">
               <span className="text-xl font-bold text-primary-foreground">AM</span>
             </div>
@@ -44,12 +38,13 @@ const Header: React.FC = () => {
             {navigationItems.map((item) => (
               <Link
                 key={item.name}
-                to={item.href}
+                href={item.href}
                 onClick={() => window.scrollTo(0, 0)}
                 className={`font-medium transition-colors duration-200 hover:text-primary ${
-                  isActiveRoute(item.href)
-                    ? 'text-primary border-b-2 border-primary'
-                    : 'text-foreground hover:text-primary'
+                  // isActiveRoute(item.href)
+                  //   ? 'text-primary border-b-2 border-primary'
+                  //   : 'text-foreground hover:text-primary'
+                  'text-foreground hover:text-primary'
                 }`}
               >
                 {item.name}
@@ -66,7 +61,7 @@ const Header: React.FC = () => {
               </a>
             </div>
             <Button variant="cta" size="sm" asChild>
-              <Link to="/contact">Book Consultation</Link>
+              <Link href="/contact">Book Consultation</Link>
             </Button>
           </div>
 
@@ -86,15 +81,16 @@ const Header: React.FC = () => {
               {navigationItems.map((item) => (
                 <Link
                   key={item.name}
-                  to={item.href}
+                  href={item.href}
                   onClick={() => {
                     setIsMobileMenuOpen(false);
                     window.scrollTo(0, 0);
                   }}
                   className={`font-medium py-2 px-4 rounded-lg transition-colors duration-200 ${
-                    isActiveRoute(item.href)
-                      ? 'text-primary bg-primary/10'
-                      : 'text-foreground hover:text-primary hover:bg-muted'
+                    // isActiveRoute(item.href)
+                    //   ? 'text-primary bg-primary/10'
+                    //   : 'text-foreground hover:text-primary hover:bg-muted'
+                    'text-foreground hover:text-primary hover:bg-muted'
                   }`}
                 >
                   {item.name}
@@ -114,7 +110,7 @@ const Header: React.FC = () => {
                   </a>
                 </div>
                 <Button variant="cta" className="w-full" asChild>
-                  <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                     Book Consultation
                   </Link>
                 </Button>

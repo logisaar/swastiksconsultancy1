@@ -1,10 +1,11 @@
+"use client";
 import React, { useState } from 'react';
 import { Star, Quote, Filter, ArrowRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const Testimonials: React.FC = () => {
   const [selectedFilter, setSelectedFilter] = useState('all');
@@ -279,13 +280,13 @@ const Testimonials: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="cta" size="xl" asChild>
-              <Link to="/contact">
+              <Link href="/contact">
                 Get Started Today
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
             <Button variant="outline" size="xl" asChild>
-              <Link to="/services">
+              <Link href="/services">
                 View Our Services
               </Link>
             </Button>

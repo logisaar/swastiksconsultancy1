@@ -1,4 +1,4 @@
-// File: D:\LogiSaar\swastik-consultants-1st\mishra-accountancy-nexus-main\src\app\layout.tsx
+// File: /Users/thematrix/Desktop/Testprojects/freelancesites/swastik-consultants-1st/mishra-accountancy-nexus-main/src/app/layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

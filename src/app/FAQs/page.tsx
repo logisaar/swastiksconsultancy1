@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import { Search, ChevronDown, ChevronUp, MessageCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
@@ -5,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const FAQs: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -212,7 +213,7 @@ const FAQs: React.FC = () => {
                       We couldn't find any FAQs matching your search. Try different keywords or contact us directly.
                     </p>
                     <Button variant="professional" asChild>
-                      <Link to="/contact">Contact Our Experts</Link>
+                      <Link href="/contact">Contact Our Experts</Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -256,7 +257,7 @@ const FAQs: React.FC = () => {
                   </p>
                   <div className="space-y-3">
                     <Button variant="professional" size="sm" className="w-full" asChild>
-                      <Link to="/contact">Contact Us</Link>
+                      <Link href="/contact">Contact Us</Link>
                     </Button>
                     <Button variant="outline" size="sm" className="w-full">
                       <a href="tel:+918401539713">Call: +91 84015 39713</a>
@@ -303,10 +304,10 @@ const FAQs: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="cta" size="xl" asChild>
-              <Link to="/contact">Schedule Free Consultation</Link>
+              <Link href="/contact">Schedule Free Consultation</Link>
             </Button>
             <Button variant="outline" size="xl" asChild>
-              <Link to="/services">View Our Services</Link>
+              <Link href="/services">View Our Services</Link>
             </Button>
           </div>
         </section>

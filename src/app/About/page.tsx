@@ -2,9 +2,8 @@ import React from 'react';
 import { Award, Users, Target, Eye, Calendar, CheckCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
-import abinashPortrait from '@/assets/abinash-mishra-portrait.jpg';
-import officeInterior from '@/assets/office-interior.jpg';
+import Link from 'next/link';
+
 
 const About: React.FC = () => {
   const qualifications = [
@@ -69,12 +68,12 @@ const About: React.FC = () => {
               </div>
 
               <Button variant="professional" size="lg" asChild>
-                <Link to="/contact">Schedule a Consultation</Link>
+                <Link href="/contact">Schedule a Consultation</Link>
               </Button>
             </div>
             <div className="relative">
               <img
-                src={abinashPortrait}
+                src="/abinash-mishra-portrait.jpg"
                 alt="CA Abinash Mishra"
                 className="w-full rounded-2xl shadow-professional"
               />
@@ -165,10 +164,10 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <img
-                src={officeInterior}
-                alt="Our Office"
-                className="w-full rounded-2xl shadow-professional"
-              />
+  src="/office-interior.jpg"
+  alt="Our Office"
+  className="w-full rounded-2xl shadow-professional"
+/>
             </div>
             <div>
               <h2 className="text-3xl font-bold text-primary mb-6">Our Office & Team</h2>
@@ -199,7 +198,7 @@ const About: React.FC = () => {
               </div>
               
               <Button variant="cta" size="lg" asChild>
-                <Link to="/contact">Visit Our Office</Link>
+                <Link href="/contact">Visit Our Office</Link>
               </Button>
             </div>
           </div>
@@ -216,10 +215,10 @@ const About: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="lg" asChild>
-              <Link to="/contact">Get Started Today</Link>
+              <Link href="/contact">Get Started Today</Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <Link to="/services">Explore Services</Link>
+              <Link href="/services">Explore Services</Link>
             </Button>
           </div>
         </section>

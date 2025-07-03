@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { LucideIcon } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
@@ -37,10 +37,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon: Icon, title, descriptio
         </ul>
         <div className="space-y-2">
           <Button variant="professional" className="w-full" asChild>
-            <Link to={href}>Learn More</Link>
+            <Link href={href}>Learn More</Link>
           </Button>
           <Button variant="outline" size="sm" className="w-full" asChild>
-            <Link to="/contact">Get Quote</Link>
+            <Link href="/contact">Get Quote</Link>
           </Button>
         </div>
       </CardContent>

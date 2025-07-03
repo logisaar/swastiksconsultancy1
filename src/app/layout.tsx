@@ -1,5 +1,6 @@
 import "./globals.css";
-import Providers from "./page";
+import Providers from "../components/Providers";
+import Layout from "../components/Layout";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -7,7 +8,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head />
       <body>
         <Providers>
-          {children}
+          <Layout>
+            {children}
+          </Layout>
         </Providers>
       </body>
     </html>
